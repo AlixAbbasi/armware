@@ -1,4 +1,4 @@
-%Feature
+#Feature
 For the Serial Console
 You can input commands in the serial console.
 For the emulated environment
@@ -6,7 +6,7 @@ ARMware now can emulate the ARM architecture version 4 Instruction Set.
 Add a dynamic compiler.
 Add a threaded code optimization technology.
 
-%Brief Introduction
+#Brief Introduction
 ARMware, like VMware or Bochs, is an emulator for a hardware platform. Opposite to the x86 platform which VMware or Bochs want to emulate, ARMware provides an emulation environment for the ARM platform. It can emulate Intel StrongARM SA-1110 as the core for now (The support for Intel Xscale is been developping). The whole emulated environment which ARMware provides is like HP iPaq H3600 (The future emulation environment for the Intel Xscale will be like HP iPaq H5500).
 
 The hardware components that ARMware can emulate for now are:
@@ -72,7 +72,7 @@ Using Qt
 Using Gtk
 Touch panel
 
-%Advantage
+#Advantage
 ARMware has a build-in threaded code engine which will cache an EBB (extended basic block) of ARM codes, so that it can increase the execuation speed.
 Further more, ARMware has a build-in dynamic compiler which will translate an EBB of ARM codes into a block of x86 machine codes, so that it can increase the runtime preformance dramatically. The optimization technologies implemented in this dynamic compiler include:
 Redundant condition code calculation elimination
@@ -97,22 +97,22 @@ Every user's machine database is placed under their home directory. Thus differe
 
 
 
-%Execuation flow paths
+#Execuation flow paths
 If ARMware meets with an EBB which it didn't execuate before, ARMware will use the build-in interpreter to interpret that block of ARM codes.
 Through the build-in profiler, ARMware will decide which block should be optimized by the build-in threaded-code engine. Then the build-in threaded-code engine will translate that EBB into threaded codes.
 If ARMware meets that threaded-coded EBB again, it will use the threaded codes to execute that block of ARM codes. In the execuating, however, if it jumps to an un-threaded-coded EBB, ARMware will fall back to the interpreter mode to interpret it.
 Again, through the build-in profiler, ARMware will further decide which block should be dynamically compiled. Then the build-in dynamic compiler will compile that block into x86 machine codes.
 If ARMware meets that dynamically-compiled EBB again, it will use the x86 machine codes to execuating that block of ARM codes. In the execuating, however, if it jumps to an un-dynamically compiled EBB, ARMware will fall back to the interpreter or threaded-code mode to execuate it.
 
-%Shortcoming
+#Shortcoming
 Doesn't support network.
 Doesn't support audio.
 
-%Packet Content
+#Packet Content
 ARMware includes a main program, several libraries, and several pictures which ARMware needs, and 2 traditional chinese translation files.
 
 
-%System Requirement
+#System Requirement
 Hardware: Pentium M or Pentium 4 (Because ARMware needs MMX & SSE2 instruction sets)
 Library: Because ARMware is written by the assembly lanauge and pure C++ language, and compiled by the GNU C++ Compiler 4.0. Thus, if you want to run ARMware, you will need:
 libc6 (>= 2.3.5)
@@ -126,7 +126,7 @@ NOTE: Because of the incompatibility between the C++ ABI of gcc-3.3 and gcc-4.0,
 As far as I know, debian stable, testing, and unstable release, and ubuntu hoary are still using gcc-3.3 as their default compiler. However, ubuntu breezy has already switched to the gcc-4.0. Thus you can get packages for these 4 libraries from the breezy directly, or you can get the source codes for these 4 libraries, and compile them by gcc-4.0.
 
 
-%Linux Kernel Patch
+#Linux Kernel Patch
 Because of the quality of the touch panel in iPaq is not good, linux kernel will discard the user input axis data at first time. However, because ARMware is a software emulator, linux kernel doesn't need this strange behavior. Thus, I modify parts of the linux kernel source, including touch panel revising and increasing the console log level such that every kernel messages will be printed to the serial console.
 
 If you want to execute ARMware and compile your own linux kernel, you have to download this kernel patch(http://armware.googlecode.com/files/kernel-patch.patch).
