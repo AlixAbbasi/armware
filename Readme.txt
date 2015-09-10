@@ -11,6 +11,8 @@ ARMware, like VMware or Bochs, is an emulator for a hardware platform. Opposite 
 
 The hardware components that ARMware can emulate for now are:
 
+
+
 ARM architecture version 4 core
 Supports all kinds of ARM instruction set (but does not support Thumb instruction set)
 Supports all processor mode:
